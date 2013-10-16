@@ -46,9 +46,9 @@
 #include "strtonum.h"
 #include "utp.h"
 
-#define WRITESIZE_MAX		(1 << 20)
+#define WRITESIZE_MAX           (1 << 20)
 
-#define TIMEO_CHECK_INTERVAL	500000
+#define TIMEO_CHECK_INTERVAL    500000
 
 struct TestContext {
         u_int lflag;
@@ -81,12 +81,12 @@ struct UTPFunctionTable _UTP_CALLBACKS = {
         &_utp_overhead,
 };
 
-static void _utp_read(void *opaque, const byte * buf, size_t cnt)
+static void _utp_read(void *opaque, const byte *buf, size_t cnt)
 {
         /* nothing */ ;
 }
 
-static void _utp_write(void *opaque, byte * buf, size_t cnt)
+static void _utp_write(void *opaque, byte *buf, size_t cnt)
 {
         memset(buf, 'A', cnt);
 }
@@ -137,13 +137,13 @@ static void _utp_accept(void *opaque, struct UTPSocket *utpsock)
 }
 
 static void
-_utp_sendto(void *opaque, const byte * pkt, size_t len,
+_utp_sendto(void *opaque, const byte *pkt, size_t len,
             const struct sockaddr *sa, socklen_t salen)
 {
         struct TestContext *context;
         ssize_t result;
 
-        /* TODO: buffer if sendto() fails? */
+        /* TODO: buffer and retry if sendto() fails? */
 
         context = (struct TestContext *) opaque;
 
@@ -173,10 +173,8 @@ static void _libevent_readwrite(int fd, short event, void *opaque)
 
                 if (result > 0) {
                         (void) UTP_IsIncomingUTP(_utp_accept, _utp_sendto,
-                                                 context, buffer,
-                                                 (size_t) result,
-                                                 (const struct sockaddr *)
-                                                 &sa, salen);
+                            context, buffer, (size_t) result,
+                            (const struct sockaddr *) &sa, salen);
                 } else
                         warn("recvfrom() failed");
         }
@@ -204,8 +202,8 @@ static void _libevent_quit(int fd, short event, void *opaque)
         exit(0);
 }
 
-#define USAGE								\
-    "usage: utptest [-B write-size] [-p local-port] address port\n"	\
+#define USAGE \
+    "usage: utptest [-B write-size] [-p local-port] address port\n" \
     "       utptest -l [-p local-port]\n"
 
 int main(int argc, char *const *argv)
@@ -254,9 +252,7 @@ int main(int argc, char *const *argv)
                 switch (opt) {
                 case 'B':
                         context.writesize = openbsd_strtonum(optarg,
-                                                             0,
-                                                             WRITESIZE_MAX,
-                                                             &errstr);
+                            0, WRITESIZE_MAX, &errstr);
                         if (errstr)
                                 errx(1, "writesize is %s", errstr);
                         break;
@@ -265,8 +261,7 @@ int main(int argc, char *const *argv)
                         break;
                 case 'p':
                         sin = (struct sockaddr_in *) &salocal;
-                        port =
-                            openbsd_strtonum(optarg, 1024, 65535, &errstr);
+                        port = openbsd_strtonum(optarg, 1024, 65535, &errstr);
                         if (errstr)
                                 errx(1, "port is %s", errstr);
                         sin->sin_port = htons((u_int16_t) port);
