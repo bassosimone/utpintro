@@ -1,0 +1,9 @@
+Note: the following was the `./utptest_emul` output during the test, which
+includes the timeouts and retransmissions.
+
+utptest_emul: REXMIT <406.520000/232.920000> 692
+utptest_emul: REXMIT <261.555000/194.934000> 2002
+utptest_emul: REXMIT <635.688000/192.451000> 4982
+utptest_emul: REXMIT <550.645000/191.086000> 5084
+utptest_emul: REXMIT <235.255000/195.864000> 5123
+utptest_emul: REXMIT <595.900000/195.614000> 6494
