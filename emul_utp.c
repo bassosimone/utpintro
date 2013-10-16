@@ -41,18 +41,18 @@
 
 #include "utp.h"
 
-#define SEQ_LT(__l, __r)	((int16_t)((__l) - (__r)) < 0)
-#define SEQ_LEQ(__l, __r)	((int16_t)((__l) - (__r)) <= 0)
-#define SEQ_GT(__l, __r)	((int16_t)((__l) - (__r)) > 0)
-#define SEQ_GEQ(__l, __r)	((int16_t)((__l) - (__r)) >= 0)
+#define SEQ_LT(__l, __r)        ((int16_t)((__l) - (__r)) < 0)
+#define SEQ_LEQ(__l, __r)       ((int16_t)((__l) - (__r)) <= 0)
+#define SEQ_GT(__l, __r)        ((int16_t)((__l) - (__r)) > 0)
+#define SEQ_GEQ(__l, __r)       ((int16_t)((__l) - (__r)) >= 0)
 
-#define PACKET_VER(__foo)	((__foo) & 15)
-#define PACKET_TYPE(__foo)	(((__foo) & 240) >> 4)
+#define PACKET_VER(__foo)       ((__foo) & 15)
+#define PACKET_TYPE(__foo)      (((__foo) & 240) >> 4)
 
-#define HEADER_LEN		20
-#define PACKET_MAX		1380
+#define HEADER_LEN              20
+#define PACKET_MAX              1380
 
-#define TARGET			100000.0        /* 100 ms */
+#define TARGET                  100000.0        /* 100 ms */
 
 #define DEBUGX(foo, ...)
 
@@ -120,7 +120,7 @@ static void *xmalloc(size_t size)
         return (ptr);
 }
 
-struct UTPSocket *UTP_Create(SendToProc * sendto_wrapper,
+struct UTPSocket *UTP_Create(SendToProc *sendto_wrapper,
                              void *sendto_opaque,
                              const struct sockaddr *sa, socklen_t salen)
 {
@@ -162,7 +162,7 @@ UTP_SetCallbacks(struct UTPSocket *sock, struct UTPFunctionTable *func,
 
 void UTP_Connect(struct UTPSocket *sock)
 {
-        sock->functions.on_state(sock->opaque, UTP_STATE_CONNECT);      /* XXX */
+        sock->functions.on_state(sock->opaque, UTP_STATE_CONNECT);  /* XXX */
 }
 
 static void send_packet(struct UTPSocket *sock, struct Packet *packet)
@@ -214,9 +214,9 @@ static void send_packet(struct UTPSocket *sock, struct Packet *packet)
 }
 
 bool
-UTP_IsIncomingUTP(UTPGotIncomingConnection * handle_accept,
-                  SendToProc * sendto_wrapper, void *sendto_opaque,
-                  const byte * buffer, size_t nbytes,
+UTP_IsIncomingUTP(UTPGotIncomingConnection *handle_accept,
+                  SendToProc *sendto_wrapper, void *sendto_opaque,
+                  const byte *buffer, size_t nbytes,
                   const struct sockaddr *sa, socklen_t salen)
 {
         u_long acked;
