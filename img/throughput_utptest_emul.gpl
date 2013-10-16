@@ -1,0 +1,8 @@
+set term svg
+set output "throughput_utptest_emul.svg"
+set grid
+set xrange [0:200]
+set yrange [0:600]
+set xlabel "Elapsed time (s)" font "Arial, 22"
+set ylabel "en1 throughput (Kbit/s)" font "Arial, 22"
+plot "throughput_utptest_emul.dat" title "emul_utp" with lines lc rgbcolor "#2E8B57"

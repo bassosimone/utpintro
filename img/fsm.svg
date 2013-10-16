@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="36cm" height="20cm" viewBox="133 144 709 397" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="509" y="259" width="106.1" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="509" y="259" width="106.1" height="52" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="562.05" y="280.9">
+      <tspan x="562.05" y="280.9">CONGESTION</tspan>
+      <tspan x="562.05" y="296.9">AVOIDANCE</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="260.2" y="145.6" width="80" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260.2" y="145.6" width="80" height="36" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="300.2" y="167.5">
+      <tspan x="300.2" y="167.5">LOSS</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="401.2" y="504.6" width="88.6" height="36" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="401.2" y="504.6" width="88.6" height="36" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="445.5" y="526.5">
+      <tspan x="445.5" y="526.5">RECOVERY</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 548.787 312.003 C 523.737,363.003 457.044,432.013 448.485,499.176"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="444.506,490.843 448.202,501.394 454.426,492.107 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="556" y="412.45">
+    <tspan x="556" y="412.45">3 dup ACKs:</tspan>
+    <tspan x="556" y="428.45">cwnd = cwnd / 2</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 439.925 503.614 C 422.425,444.014 478.322,372.983 533.289,315.222"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="531.559,324.294 534.831,313.603 524.315,317.4 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 615.1 285 C 699,300 662,223 618.648,256.277"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="621.762,247.583 616.874,257.638 627.851,255.516 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="756.8" y="267.5">
+    <tspan x="756.8" y="267.5">in sequence ACK:</tspan>
+    <tspan x="756.8" y="283.5">cwnd += off_target / cwnd</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="419" y="388.45">
+    <tspan x="419" y="388.45">the lost packet</tspan>
+    <tspan x="419" y="404.45">is ACKed</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 507.995 275.401 C 462.945,267.401 315.156,232.008 305.311,186.977"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="311.854,193.494 304.833,184.793 302.084,195.63 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="376.25" y="272.5">
+    <tspan x="376.25" y="272.5">rexmit timeout:</tspan>
+    <tspan x="376.25" y="288.5">cwnd = 1</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 341.188 182.282 C 442.988,228.682 543.538,173.008 556.859,253.596"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="550.66,246.751 557.224,255.802 560.526,245.121 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="736" y1="378" x2="616.489" y2="314.105"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="625.693,313.356 614.517,313.051 620.978,322.175 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="758" y="388.45">
+    <tspan x="758" y="388.45">init:</tspan>
+    <tspan x="758" y="404.45">cwnd = 2</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="484.4" y="158.8">
+    <tspan x="484.4" y="158.8">the lost packet</tspan>
+    <tspan x="484.4" y="174.8">is ACKed:</tspan>
+    <tspan x="484.4" y="190.8">cwnd += off_target / cwnd</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 400.207 517.034 C 240.707,497.434 181.806,275.001 276.749,185.666"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="274.521,194.627 278.378,184.133 267.669,187.345 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="183.675" y="197.8">
+    <tspan x="183.675" y="197.8">rexmit timeout:</tspan>
+    <tspan x="183.675" y="213.8">cwnd = 1</tspan>
+  </text>
+</svg>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="42cm" height="21cm" viewBox="131 358 828 420" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #b3b3b3" x="490.66" y="690" width="40.678" height="30.5085"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="490.66" y="690" width="40.678" height="30.5085"/>
+    <rect style="fill: #000000" x="495.067" y="694.407" width="31.8644" height="21.0169"/>
+    <polygon style="fill: #b3b3b3" points="496.168,720.508 517.101,720.508 517.101,725.254 497.27,725.254 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="496.168,720.508 517.101,720.508 517.101,725.254 497.27,725.254 "/>
+    <polygon style="fill: #b3b3b3" points="517.101,720.508 525.829,720.508 524.728,725.254 517.101,725.254 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="517.101,720.508 525.829,720.508 524.728,725.254 517.101,725.254 "/>
+    <rect style="fill: #ffffff" x="518.524" y="721.932" width="1.89831" height="1.89831"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.5; stroke: #000000" x="518.524" y="721.932" width="1.89831" height="1.89831"/>
+    <polygon style="fill: #b3b3b3" points="506.931,725.254 515.067,725.254 515.067,727.627 519.135,727.627 519.135,730 502.863,730 502.863,727.627 506.931,727.627 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="506.931,725.254 515.067,725.254 515.067,727.627 519.135,727.627 519.135,730 502.863,730 502.863,727.627 506.931,727.627 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="510.999" y="743.356">
+      <tspan x="510.999" y="743.356">Sender App</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="900" y1="454" x2="900" y2="556"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="900" y1="476" x2="937" y2="476"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="900" y1="517" x2="867" y2="517"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="900" y1="537" x2="940" y2="537"/>
+  </g>
+  <g>
+    <rect style="fill: #b3b3b3" x="595.375" y="684.592" width="23.0562" height="53.7978"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" x="595.375" y="684.592" width="23.0562" height="53.7978"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="597.681" y="687.82" width="18.445" height="6.14833"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="597.681" y="693.968" width="18.445" height="6.14833"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="597.681" y="700.117" width="18.445" height="6.14833"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="597.681" y="706.265" width="18.445" height="6.14833"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="597.681" y="713.643" width="11.5281" height="3.689"/>
+    <ellipse style="fill: #00ff00" cx="614.973" cy="714.258" rx="0.806968" ry="0.806968"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="614.973" cy="714.258" rx="0.806968" ry="0.806968"/>
+    <ellipse style="fill: #ffff00" cx="614.973" cy="716.717" rx="0.806968" ry="0.806968"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="614.973" cy="716.717" rx="0.806968" ry="0.806968"/>
+    <rect style="fill: #ffffff" x="610.362" y="714.873" width="2.76675" height="2.45933"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="610.362" y="714.873" width="2.76675" height="2.45933"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 599.218 722.25 L 599.218,735.7"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 603.061 722.25 L 603.061,735.7"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 606.903 722.25 L 606.903,735.7"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 610.746 722.25 L 610.746,735.7"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 614.589 722.25 L 614.589,735.7"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 618.431 722.25 L 618.431,735.7"/>
+    <polygon style="fill: #999999" points="590.764,743.001 595.375,733.779 595.375,738.39 618.431,738.39 618.431,733.779 624.58,743.001 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" points="590.764,743.001 595.375,733.779 595.375,738.39 618.431,738.39 618.431,733.779 624.58,743.001 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="607.672" y="756.538">
+      <tspan x="607.672" y="756.538">Receiver</tspan>
+      <tspan x="607.672" y="772.538">App</tspan>
+    </text>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="927" y="566.539">
+    <tspan x="927" y="566.539">LAN</tspan>
+    <tspan x="927" y="582.061">100 Mbit/s</tspan>
+  </text>
+  <g>
+    <path style="fill: #ffffff" d="M 630.996 389.088 C 621.038,388.726 601.726,396.318 604.442,412.585 C 607.158,428.851 620.133,432.466 625.565,427.767 C 630.996,423.068 617.115,450.541 643.67,457.77 C 670.224,465 683.803,453.432 679.88,445.118 C 675.957,436.804 703.115,464.639 715.789,448.733 C 728.462,432.828 702.813,417.645 708.245,419.814 C 713.676,421.983 730.273,419.091 724.841,391.98 C 719.41,364.868 670.526,385.835 675.957,381.858 C 681.389,377.882 667.81,358 650.912,361.976 C 634.014,365.953 632.815,373.168 631.005,389.074 L 630.996,389.088z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 630.996 389.088 C 621.038,388.726 601.726,396.318 604.442,412.585 C 607.158,428.851 620.133,432.466 625.565,427.767 C 630.996,423.068 617.115,450.541 643.67,457.77 C 670.224,465 683.803,453.432 679.88,445.118 C 675.957,436.804 703.115,464.639 715.789,448.733 C 728.462,432.828 702.813,417.645 708.245,419.814 C 713.676,421.983 730.273,419.091 724.841,391.98 C 719.41,364.868 670.526,385.835 675.957,381.858 C 681.389,377.882 667.81,358 650.912,361.976 C 634.014,365.953 632.815,373.168 631.005,389.074 L 630.996,389.088"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="669.445" y="409.386">
+      <tspan x="669.445" y="409.386">Internet</tspan>
+      <tspan x="669.445" y="425.386">&gt; 1 Gbit/s</tspan>
+    </text>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="767" y="454.3">
+    <tspan x="767" y="454.3">LAN queue</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="360.96" y1="471.63" x2="492.368" y2="473.094"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="484.549,478.007 494.604,473.119 484.661,468.008 "/>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="271" y="456.374" width="89" height="29.5"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="271" y="456.374" width="89" height="29.5"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="345.167" y1="456.374" x2="345.167" y2="485.874"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="300.667" y1="456.374" x2="300.667" y2="485.874"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="285.833" y1="456.374" x2="285.833" y2="485.874"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="315.5" y1="456.374" x2="315.5" y2="485.874"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="330.333" y1="456.374" x2="330.333" y2="485.874"/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff" cx="374.75" cy="471.126" rx="13.75" ry="13.75"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="374.75" cy="471.126" rx="13.75" ry="13.75"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="374.75" y="475.126">
+        <tspan x="374.75" y="475.126"></tspan>
+      </text>
+    </g>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="587.787" y1="473.445" x2="714.341" y2="472.875"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="706.6,477.91 716.577,472.865 706.555,467.91 "/>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="497.8" y="458.9" width="89" height="29.5"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="497.8" y="458.9" width="89" height="29.5"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="571.967" y1="458.9" x2="571.967" y2="488.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="527.467" y1="458.9" x2="527.467" y2="488.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="512.633" y1="458.9" x2="512.633" y2="488.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="542.3" y1="458.9" x2="542.3" y2="488.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="557.133" y1="458.9" x2="557.133" y2="488.4"/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff" cx="601.55" cy="473.65" rx="13.75" ry="13.75"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="601.55" cy="473.65" rx="13.75" ry="13.75"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="601.55" y="477.65">
+        <tspan x="601.55" y="477.65"></tspan>
+      </text>
+    </g>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="314.426" y="449.162">
+    <tspan x="314.426" y="449.162">Router queue</tspan>
+  </text>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="542.85" y="454.4">
+    <tspan x="542.85" y="454.4">Internet queue</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="719.8" y="457.9" width="89" height="29.5"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="719.8" y="457.9" width="89" height="29.5"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="793.967" y1="457.9" x2="793.967" y2="487.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="749.467" y1="457.9" x2="749.467" y2="487.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="734.633" y1="457.9" x2="734.633" y2="487.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="764.3" y1="457.9" x2="764.3" y2="487.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="779.133" y1="457.9" x2="779.133" y2="487.4"/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff" cx="823.55" cy="472.65" rx="13.75" ry="13.75"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="823.55" cy="472.65" rx="13.75" ry="13.75"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="823.55" y="476.65">
+        <tspan x="823.55" y="476.65"></tspan>
+      </text>
+    </g>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="792" y="621.539">
+    <tspan x="792" y="621.539">Recv buffer</tspan>
+    <tspan x="792" y="637.061">(kernel)</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="302.8" y="590.9" width="89" height="29.5"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="302.8" y="590.9" width="89" height="29.5"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="376.967" y1="590.9" x2="376.967" y2="620.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="332.467" y1="590.9" x2="332.467" y2="620.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="317.633" y1="590.9" x2="317.633" y2="620.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="347.3" y1="590.9" x2="347.3" y2="620.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="362.133" y1="590.9" x2="362.133" y2="620.4"/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff" cx="287.55" cy="605.65" rx="13.75" ry="13.75"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="287.55" cy="605.65" rx="13.75" ry="13.75"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="287.55" y="609.65">
+        <tspan x="287.55" y="609.65"></tspan>
+      </text>
+    </g>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="346.3" y="635.401">
+    <tspan x="346.3" y="635.401">Send buffer</tspan>
+    <tspan x="346.3" y="650.923">(kernel)</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 502.712,689.497 A 152.127,152.127 0 0 0 397.172,607.663"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="405.704,604.033 394.984,607.208 403.955,613.879 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 840.288,590.76 A 61.6909,61.6909 0 0 0 837.3,472.65"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="846.656,584.179 838.169,591.457 849.084,593.88 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 264.535,472.002 A 67.0264,67.0264 0 1 0 273.8,605.65"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.606,476.595 266.765,471.927 256.935,466.601 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 7; stroke: #000000" x1="150.15" y1="536.464" x2="151.15" y2="591.464"/>
+    <g>
+      <polygon style="fill: none; fill-opacity:0; stroke-width: 3.2; stroke: #000000" points="133.4,580.613 147.335,580.613 156.625,576.742 179.85,576.742 187.05,580.613 203.075,580.613 203.075,596.096 133.4,596.096 "/>
+      <rect style="fill: #b3b3b3" x="136.884" y="582.548" width="62.7075" height="11.6125"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" x="136.884" y="582.548" width="62.7075" height="11.6125"/>
+      <ellipse style="fill: #ffffff" cx="144.548" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="144.548" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: #ffffff" cx="159.877" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="159.877" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: #ffffff" cx="175.902" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="175.902" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: #ffffff" cx="191.23" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="191.23" cy="588.355" rx="3.87083" ry="3.87083"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="168.238" y="614.289">
+        <tspan x="168.238" y="614.289">WiFi</tspan>
+        <tspan x="168.238" y="630.289">11 Mbit/s</tspan>
+      </text>
+    </g>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="513" y="607.017">
+    <tspan x="513" y="607.017">send(2)</tspan>
+    <tspan x="513" y="622.539">fills the send</tspan>
+    <tspan x="513" y="638.061">buffer,</tspan>
+    <tspan x="513" y="653.583">if possible</tspan>
+  </text>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="684" y="641.017">
+    <tspan x="684" y="641.017">recv(2)</tspan>
+    <tspan x="684" y="656.539">removes packets</tspan>
+    <tspan x="684" y="672.061">from the recv</tspan>
+    <tspan x="684" y="687.583">buffer</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 716.8,592.65 A 112.47,112.47 0 0 0 610.296,679.439"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="606.768,670.849 609.786,681.614 616.587,672.741 "/>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="745.8" y="577.9" width="89" height="29.5"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="745.8" y="577.9" width="89" height="29.5"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="819.967" y1="577.9" x2="819.967" y2="607.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="775.467" y1="577.9" x2="775.467" y2="607.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="760.633" y1="577.9" x2="760.633" y2="607.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="790.3" y1="577.9" x2="790.3" y2="607.4"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="805.133" y1="577.9" x2="805.133" y2="607.4"/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff" cx="730.55" cy="592.65" rx="13.75" ry="13.75"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="730.55" cy="592.65" rx="13.75" ry="13.75"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="730.55" y="596.65">
+        <tspan x="730.55" y="596.65"></tspan>
+      </text>
+    </g>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 7; stroke: #000000" x1="419" y1="374" x2="420" y2="429"/>
+    <g>
+      <polygon style="fill: none; fill-opacity:0; stroke-width: 3.2; stroke: #000000" points="402.25,418.149 416.185,418.149 425.475,414.278 448.7,414.278 455.9,418.149 471.925,418.149 471.925,433.632 402.25,433.632 "/>
+      <rect style="fill: #b3b3b3" x="405.734" y="420.084" width="62.7075" height="11.6125"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" x="405.734" y="420.084" width="62.7075" height="11.6125"/>
+      <ellipse style="fill: #ffffff" cx="413.398" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="413.398" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: #ffffff" cx="428.726" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="428.726" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: #ffffff" cx="444.752" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="444.752" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: #ffffff" cx="460.08" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" cx="460.08" cy="425.89" rx="3.87083" ry="3.87083"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="437.088" y="451.825">
+        <tspan x="437.088" y="451.825">ADSL upload</tspan>
+        <tspan x="437.088" y="467.826">476 Kbit/s</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

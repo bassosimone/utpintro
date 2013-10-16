@@ -1,0 +1,9 @@
+set term svg
+set output "throughput_comparison.svg"
+set grid
+set xrange [0:200]
+set yrange [0:750]
+set xlabel "Elapsed time (s)" font "Arial, 22"
+set ylabel "en1 throughput (Kbit/s)" font "Arial, 22"
+plot "throughput_tcptest.dat" title "TCP" with lines lc rgbcolor "#FF6347", \
+  "throughput_utptest.dat" title "libutp" with lines lc rgbcolor "#4169E1"

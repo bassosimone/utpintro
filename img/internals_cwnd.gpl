@@ -1,0 +1,10 @@
+set term svg
+set output "internals_cwnd.svg"
+set grid
+set xrange [0:200]
+set yrange [0:]
+set xlabel "Elapsed time (s)" font "Arial, 22"
+set ylabel "emul_utp internals (bytes)" font "Arial, 22"
+plot "internals.dat" using 1:2 title "flight_size" with lines \
+  lc rgbcolor "#DAA520", "internals.dat" using 1:3 title "cwnd" \
+  with lines lc rgbcolor "#1E90FF"

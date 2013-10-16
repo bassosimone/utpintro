@@ -1,0 +1,9 @@
+set term svg
+set output "ewma_tput_comparison.svg"
+set grid
+set xrange [0:200]
+set yrange [0:750]
+set xlabel "Elapsed time (s)" font "Arial, 22"
+set ylabel "en1 throughput avg. (Kbit/s)" font "Arial, 22"
+plot "ewma_tput_tcptest.dat" title "TCP" with lines lc rgbcolor "#FF6347", \
+  "ewma_tput_utptest.dat" title "libutp" with lines lc rgbcolor "#4169E1"

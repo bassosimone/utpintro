@@ -1,0 +1,10 @@
+set term svg
+set output "internals_timers.svg"
+set grid
+set xrange [0:200]
+set yrange [0:250]
+set xlabel "Elapsed time (s)" font "Arial, 22"
+set ylabel "emul_utp internals (ms)" font "Arial, 22"
+plot "internals.dat" using 1:4 title "avg. extra delay" with lines \
+  lc rgbcolor "#483D8B", "internals.dat" using 1:5 title "srtt" \
+  with lines lc rgbcolor "#FF8C00"

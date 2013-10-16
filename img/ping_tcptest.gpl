@@ -1,0 +1,8 @@
+set term svg
+set output "ping_tcptest.svg"
+set grid
+set xrange [0:200]
+set yrange [0:2200]
+set xlabel "Elapsed time (s)" font "Arial, 22"
+set ylabel "ping 8.8.8.8 (ms)" font "Arial, 22"
+plot "ping_tcptest.dat" title "TCP" with lines lc rgbcolor "#FF6347"

@@ -25,7 +25,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-.PHONY: all clean doc
+.PHONY: all clean img
 
 CFLAGS = -Wall -I libevent/include -I libutp
 
@@ -39,10 +39,22 @@ clean:
 	rm -rf -- libevent/test-driver
 	(cd libevent && make distclean) || true
 	(cd libutp && make clean) || true
-	(cd doc && make clean)
 
-doc:
-	(cd doc && make)
+img:
+	( \
+	 cd img && \
+	 for FILE in *.dia; do \
+	     STEM=$$(echo $$FILE|sed 's/.dia$$//g'); \
+	     dia -e $$STEM.svg $$FILE; \
+	 done && \
+	 for FILE in *.gpl; do \
+	     gnuplot $$FILE; \
+	 done && \
+	 for FILE in *.svg; do \
+	     STEM=$$(echo $$FILE|sed 's/.svg$$//g'); \
+	     inkscape -d 128 -e $$STEM.png $$STEM.svg; \
+	 done \
+	)
 
 $(LIBEVENT):
 	( \

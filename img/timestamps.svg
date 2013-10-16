@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="29cm" height="24cm" viewBox="118 127 563 472" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #b3b3b3" x="555.854" y="128.4" width="15.7895" height="36.8421"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" x="555.854" y="128.4" width="15.7895" height="36.8421"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="557.433" y="130.611" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="557.433" y="134.821" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="557.433" y="139.032" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="557.433" y="143.242" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="557.433" y="148.295" width="7.89474" height="2.52632"/>
+    <ellipse style="fill: #00ff00" cx="569.275" cy="148.716" rx="0.552632" ry="0.552632"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="569.275" cy="148.716" rx="0.552632" ry="0.552632"/>
+    <ellipse style="fill: #ffff00" cx="569.275" cy="150.4" rx="0.552632" ry="0.552632"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="569.275" cy="150.4" rx="0.552632" ry="0.552632"/>
+    <rect style="fill: #ffffff" x="566.117" y="149.137" width="1.89474" height="1.68421"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="566.117" y="149.137" width="1.89474" height="1.68421"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 558.485 154.189 L 558.485,163.4"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 561.117 154.189 L 561.117,163.4"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 563.749 154.189 L 563.749,163.4"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 566.38 154.189 L 566.38,163.4"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 569.012 154.189 L 569.012,163.4"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 571.643 154.189 L 571.643,163.4"/>
+    <polygon style="fill: #999999" points="552.696,168.4 555.854,162.084 555.854,165.242 571.643,165.242 571.643,162.084 575.854,168.4 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" points="552.696,168.4 555.854,162.084 555.854,165.242 571.643,165.242 571.643,162.084 575.854,168.4 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="564.275" y="181.453">
+      <tspan x="564.275" y="181.453">10.0.0.2</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="242" y1="191" x2="242" y2="597"/>
+  <g>
+    <rect style="fill: #b3b3b3" x="233.58" y="132" width="15.7895" height="36.8421"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #000000" x="233.58" y="132" width="15.7895" height="36.8421"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="235.159" y="134.211" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="235.159" y="138.421" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="235.159" y="142.632" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="235.159" y="146.842" width="12.6316" height="4.21053"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="235.159" y="151.895" width="7.89474" height="2.52632"/>
+    <ellipse style="fill: #00ff00" cx="247.001" cy="152.316" rx="0.552632" ry="0.552632"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="247.001" cy="152.316" rx="0.552632" ry="0.552632"/>
+    <ellipse style="fill: #ffff00" cx="247.001" cy="154" rx="0.552632" ry="0.552632"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="247.001" cy="154" rx="0.552632" ry="0.552632"/>
+    <rect style="fill: #ffffff" x="243.843" y="152.737" width="1.89474" height="1.68421"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="243.843" y="152.737" width="1.89474" height="1.68421"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 236.211 157.789 L 236.211,167"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 238.843 157.789 L 238.843,167"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 241.475 157.789 L 241.475,167"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 244.106 157.789 L 244.106,167"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 246.738 157.789 L 246.738,167"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 249.369 157.789 L 249.369,167"/>
+    <polygon style="fill: #999999" points="230.422,172 233.58,165.684 233.58,168.842 249.369,168.842 249.369,165.684 253.58,172 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" points="230.422,172 233.58,165.684 233.58,168.842 249.369,168.842 249.369,165.684 253.58,172 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="242.001" y="185.053">
+      <tspan x="242.001" y="185.053">10.0.0.1</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="564.304" y1="188.603" x2="565" y2="598"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="244" y1="221" x2="558.559" y2="258.471"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="550.258,262.518 560.78,258.736 551.441,252.588 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="147.025" y="224">
+    <tspan x="147.025" y="224">clock: 10</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="456.3" y="241.5">
+    <tspan x="456.3" y="241.5">10:???</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="626.65" y="248.95">
+    <tspan x="626.65" y="248.95">clock: 77</tspan>
+    <tspan x="626.65" y="264.95">diff: 77 - 10 = 67</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="563" y1="316" x2="246.441" y2="353.474"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="253.563,347.596 244.221,353.737 254.739,357.527 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="626.65" y="311.95">
+    <tspan x="626.65" y="311.95">clock: 80</tspan>
+    <tspan x="626.65" y="327.95">diff: 67</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="320.3" y="336.5">
+    <tspan x="320.3" y="336.5">80:67</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175.8" y="343.95">
+    <tspan x="175.8" y="343.95">clock: 19</tspan>
+    <tspan x="175.8" y="359.95">diff: 19 - 80 = -61</tspan>
+    <tspan x="175.8" y="375.95">delay: 67</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="243" y1="428" x2="560.557" y2="464.489"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="552.273,468.57 562.779,464.745 553.415,458.636 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175.8" y="424.45">
+    <tspan x="175.8" y="424.45">clock: 24</tspan>
+    <tspan x="175.8" y="440.45">diff: -61</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="450.3" y="445.5">
+    <tspan x="450.3" y="445.5">24:-61</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="626.65" y="466.95">
+    <tspan x="626.65" y="466.95">clock: 93</tspan>
+    <tspan x="626.65" y="482.95">diff: 93 - 24 = 69</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="565" y1="469" x2="246.404" y2="525.223"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="253.181,518.95 244.202,525.611 254.919,528.797 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="318.3" y="497.5">
+    <tspan x="318.3" y="497.5">93:69</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180.8" y="498.95">
+    <tspan x="180.8" y="498.95">clock: 32</tspan>
+    <tspan x="180.8" y="514.95">diff: 32 - 93 = -61</tspan>
+    <tspan x="180.8" y="530.95">min-delay: 67</tspan>
+    <tspan x="180.8" y="546.95">delay: 69</tspan>
+    <tspan x="180.8" y="562.95">increased!!!</tspan>
+  </text>
+</svg>
