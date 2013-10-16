@@ -1,0 +1,6 @@
+[submodule "libevent"]
+	path = libevent
+	url = https://github.com/libevent/libevent
+[submodule "libutp"]
+	path = libutp
+	url = https://github.com/bittorrent/libutp
