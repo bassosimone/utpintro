@@ -395,7 +395,7 @@ UTP_IsIncomingUTP(UTPGotIncomingConnection *handle_accept,
         return (1);
 }
 
-bool UTP_Write(struct UTPSocket * sock, size_t count)
+bool UTP_Write(struct UTPSocket *sock, size_t count)
 {
         struct Packet *packet;
         size_t size;
