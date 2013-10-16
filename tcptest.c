@@ -46,267 +46,268 @@
 #include "strtonum.h"
 
 struct TestContext {
-	unsigned char	buffer[65536];
-	struct event	evreadwrite;
-	int		sock;
-	int		writesize;
+        unsigned char buffer[65536];
+        struct event evreadwrite;
+        int sock;
+        int writesize;
 };
 
-static void		_libevent_accept(int, short, void *);
-static void		_libevent_connect(int, short, void *);
-static void		_libevent_quit(int, short, void *);
-static void		_libevent_readwrite(int, short, void *);
+static void _libevent_accept(int, short, void *);
+static void _libevent_connect(int, short, void *);
+static void _libevent_quit(int, short, void *);
+static void _libevent_readwrite(int, short, void *);
 
-static void
-_libevent_readwrite(int fd, short event, void *opaque)
+static void _libevent_readwrite(int fd, short event, void *opaque)
 {
-	struct TestContext *context;
-	ssize_t		    result;
+        struct TestContext *context;
+        ssize_t result;
 
-	context = (struct TestContext *) opaque;
+        context = (struct TestContext *) opaque;
 
-	if ((event & EV_READ) != 0) {
-		result = read(fd, context->buffer, sizeof (context->buffer));
-		if (result == 0)
-			goto err;
-		if (result < 0)
-			goto err1;
-	}
+        if ((event & EV_READ) != 0) {
+                result =
+                    read(fd, context->buffer, sizeof(context->buffer));
+                if (result == 0)
+                        goto err;
+                if (result < 0)
+                        goto err1;
+        }
 
-	if ((event & EV_WRITE) != 0) {
-		result = write(fd, context->buffer, context->writesize);
-		if (result < 0)
-			goto err1;
-	}
+        if ((event & EV_WRITE) != 0) {
+                result = write(fd, context->buffer, context->writesize);
+                if (result < 0)
+                        goto err1;
+        }
 
-	return;
+        return;
 
-err1:	warn("I/O error");
-err:	close(fd);
-	event_del(&context->evreadwrite);
-	free(context);
+      err1:warn("I/O error");
+      err:close(fd);
+        event_del(&context->evreadwrite);
+        free(context);
 }
 
-static void
-_libevent_accept(int fd, short event, void *opaque)
+static void _libevent_accept(int fd, short event, void *opaque)
 {
-	struct TestContext	*context;
-	socklen_t		 length;
-	struct sockaddr_storage	 storage;
-	int			 sock;
+        struct TestContext *context;
+        socklen_t length;
+        struct sockaddr_storage storage;
+        int sock;
 
-	memset(&storage, 0, sizeof (storage));
-	length = sizeof (storage);
-	sock = accept(fd, (struct sockaddr *) &storage, &length);
-	if (sock < 0)
-		goto err;
+        memset(&storage, 0, sizeof(storage));
+        length = sizeof(storage);
+        sock = accept(fd, (struct sockaddr *) &storage, &length);
+        if (sock < 0)
+                goto err;
 
-	context = calloc(1, sizeof (*context));
-	if (context == NULL)
-		goto err1;
+        context = calloc(1, sizeof(*context));
+        if (context == NULL)
+                goto err1;
 
-	event_set(&context->evreadwrite, sock, EV_READ|EV_PERSIST,
-		  _libevent_readwrite, context);
-	event_add(&context->evreadwrite, NULL);
+        event_set(&context->evreadwrite, sock, EV_READ | EV_PERSIST,
+                  _libevent_readwrite, context);
+        event_add(&context->evreadwrite, NULL);
 
-	return;
+        return;
 
-err1:	close(sock);
-err:	warn("accept() failed");
+      err1:close(sock);
+      err:warn("accept() failed");
 }
 
-static void
-_libevent_connect(int fd, short event, void *opaque)
+static void _libevent_connect(int fd, short event, void *opaque)
 {
-	struct TestContext	*context;
-	socklen_t		 length;
-	int			 res;
-	struct sockaddr_storage	 storage;
+        struct TestContext *context;
+        socklen_t length;
+        int res;
+        struct sockaddr_storage storage;
 
-	context = (struct TestContext *) opaque;
+        context = (struct TestContext *) opaque;
 
-	/*
-	 * See <http://cr.yp.to/docs/connect.html>.
-	 */
+        /*
+         * See <http://cr.yp.to/docs/connect.html>.
+         */
 
-	memset(&storage, 0, sizeof (storage));
-	length = sizeof (storage);
-	res = getpeername(fd, (struct sockaddr *) &storage, &length);
-	if (res != 0) {
-		if (errno == ENOTCONN || errno == EINVAL)
-			(void)read(fd, context->buffer,
-			    sizeof (context->buffer));
-		warn("connect() failed");
-		close(fd);
-		return;
-	}
+        memset(&storage, 0, sizeof(storage));
+        length = sizeof(storage);
+        res = getpeername(fd, (struct sockaddr *) &storage, &length);
+        if (res != 0) {
+                if (errno == ENOTCONN || errno == EINVAL)
+                        (void) read(fd, context->buffer,
+                                    sizeof(context->buffer));
+                warn("connect() failed");
+                close(fd);
+                return;
+        }
 
-	event_set(&context->evreadwrite, fd, EV_WRITE|EV_PERSIST,
-		  _libevent_readwrite, context);
-	event_add(&context->evreadwrite, NULL);
+        event_set(&context->evreadwrite, fd, EV_WRITE | EV_PERSIST,
+                  _libevent_readwrite, context);
+        event_add(&context->evreadwrite, NULL);
 }
 
-static void
-_libevent_quit(int fd, short event, void *opaque)
+static void _libevent_quit(int fd, short event, void *opaque)
 {
-	exit(0);
+        exit(0);
 }
 
 #define USAGE								\
     "usage: tcptest [-B write-size] [-p local-port] address port\n"	\
     "       tcptest -l [-p local-port]\n"
 
-int
-main(int argc, char *const *argv)
+int main(int argc, char *const *argv)
 {
-	int			 activate;
-	struct event_base	*base;
-	struct TestContext	 context;
-	const char		*errstr;
-	struct event		 evquit;
-	uint8_t			 lflag;
-	int			 opt;
-	long long		 port;
-	int			 result;
-	struct sockaddr_storage	 salocal;
-	struct sockaddr_storage	 saremote;
-	struct sockaddr_in	*sin;
-	struct timeval		 tv;
+        int activate;
+        struct event_base *base;
+        struct TestContext context;
+        const char *errstr;
+        struct event evquit;
+        uint8_t lflag;
+        int opt;
+        long long port;
+        int result;
+        struct sockaddr_storage salocal;
+        struct sockaddr_storage saremote;
+        struct sockaddr_in *sin;
+        struct timeval tv;
 
-	/*
-	 * Init.
-	 */
+        /*
+         * Init.
+         */
 
-	memset(&context, 0, sizeof (context));
-	context.writesize = 1380;
-	context.sock = -1;
+        memset(&context, 0, sizeof(context));
+        context.writesize = 1380;
+        context.sock = -1;
 
-	base = event_init();
-	if (base == NULL)
-		errx(1, "event_init() failed");
+        base = event_init();
+        if (base == NULL)
+                errx(1, "event_init() failed");
 
-	memset(context.buffer, 'A', sizeof (context.buffer));
+        memset(context.buffer, 'A', sizeof(context.buffer));
 
-	memset(&salocal, 0, sizeof (struct sockaddr_storage));
-	sin = (struct sockaddr_in *) &salocal;
-	sin->sin_family = AF_INET;
-	sin->sin_port = htons(54321);
+        memset(&salocal, 0, sizeof(struct sockaddr_storage));
+        sin = (struct sockaddr_in *) &salocal;
+        sin->sin_family = AF_INET;
+        sin->sin_port = htons(54321);
 
-	memset(&saremote, 0, sizeof (struct sockaddr_storage));
-	sin = (struct sockaddr_in *) &saremote;
-	sin->sin_family = AF_INET;
+        memset(&saremote, 0, sizeof(struct sockaddr_storage));
+        sin = (struct sockaddr_in *) &saremote;
+        sin->sin_family = AF_INET;
 
-	/*
-	 * Process command line options.
-	 */
+        /*
+         * Process command line options.
+         */
 
-	lflag = 0;
+        lflag = 0;
 
-	while ((opt = getopt(argc, argv, "B:lp:")) >= 0) {
-		switch (opt) {
-		case 'B':
-			context.writesize = openbsd_strtonum(optarg,
-			    0, sizeof (context.buffer), &errstr);
-			if (errstr)
-				errx(1, "writesize is %s", errstr);
-			break;
-		case 'l':
-			lflag = 1;
-			break;
-		case 'p':
-			sin = (struct sockaddr_in *) &salocal;
-			port = openbsd_strtonum(optarg, 1024, 65535, &errstr);
-			if (errstr)
-				errx(1, "port is %s", errstr);
-			sin->sin_port = htons((u_int16_t) port);
-			break;
-		default:
-			fprintf(stderr, "%s", USAGE);
-			exit(1);
-		}
-	}
+        while ((opt = getopt(argc, argv, "B:lp:")) >= 0) {
+                switch (opt) {
+                case 'B':
+                        context.writesize = openbsd_strtonum(optarg,
+                                                             0,
+                                                             sizeof
+                                                             (context.
+                                                              buffer),
+                                                             &errstr);
+                        if (errstr)
+                                errx(1, "writesize is %s", errstr);
+                        break;
+                case 'l':
+                        lflag = 1;
+                        break;
+                case 'p':
+                        sin = (struct sockaddr_in *) &salocal;
+                        port =
+                            openbsd_strtonum(optarg, 1024, 65535, &errstr);
+                        if (errstr)
+                                errx(1, "port is %s", errstr);
+                        sin->sin_port = htons((u_int16_t) port);
+                        break;
+                default:
+                        fprintf(stderr, "%s", USAGE);
+                        exit(1);
+                }
+        }
 
-	argc -= optind;
-	argv += optind;
-	if ((lflag && argc > 0) || (!lflag && argc != 2)) {
-		fprintf(stderr, "%s", USAGE);
-		exit(1);
-	}
+        argc -= optind;
+        argv += optind;
+        if ((lflag && argc > 0) || (!lflag && argc != 2)) {
+                fprintf(stderr, "%s", USAGE);
+                exit(1);
+        }
 
-	if (!lflag) {
-		sin = (struct sockaddr_in *) &saremote;
-		result = inet_pton(AF_INET, argv[0], &sin->sin_addr);
-		if (result != 1)
-			errx(1, "inet_pton() failed");
-		port = openbsd_strtonum(argv[1], 1024, 65535, &errstr);
-		if (errstr)
-			errx(1, "port is %s", errstr);
-		sin->sin_port = htons((u_int16_t) port);
-	}
+        if (!lflag) {
+                sin = (struct sockaddr_in *) &saremote;
+                result = inet_pton(AF_INET, argv[0], &sin->sin_addr);
+                if (result != 1)
+                        errx(1, "inet_pton() failed");
+                port = openbsd_strtonum(argv[1], 1024, 65535, &errstr);
+                if (errstr)
+                        errx(1, "port is %s", errstr);
+                sin->sin_port = htons((u_int16_t) port);
+        }
 
-	/*
-	 * Create the socket.
-	 */
+        /*
+         * Create the socket.
+         */
 
-	context.sock = socket(AF_INET, SOCK_STREAM, 0);
-	if (context.sock < 0)
-		err(1, "socket() failed");
+        context.sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (context.sock < 0)
+                err(1, "socket() failed");
 
-	result = evutil_make_socket_nonblocking(context.sock);
+        result = evutil_make_socket_nonblocking(context.sock);
         if (result != 0)
                 return (result);
 
-	if (lflag) {
-		activate = 1;
-		result = setsockopt(context.sock, SOL_SOCKET, SO_REUSEADDR,
-				&activate, sizeof (activate));
-		if (result != 0)
-			err(1, "setsockopt() failed");
+        if (lflag) {
+                activate = 1;
+                result = setsockopt(context.sock, SOL_SOCKET, SO_REUSEADDR,
+                                    &activate, sizeof(activate));
+                if (result != 0)
+                        err(1, "setsockopt() failed");
 
-		sin = (struct sockaddr_in *) &salocal;
+                sin = (struct sockaddr_in *) &salocal;
 
-		result = bind(context.sock, (struct sockaddr *) sin,
-			sizeof (*sin));
-		if (result != 0)
-			err(1, "bind() failed");
+                result = bind(context.sock, (struct sockaddr *) sin,
+                              sizeof(*sin));
+                if (result != 0)
+                        err(1, "bind() failed");
 
-		result = listen(context.sock, 10);
-		if (result != 0)
-			err(1, "listen() failed");
+                result = listen(context.sock, 10);
+                if (result != 0)
+                        err(1, "listen() failed");
 
-	} else {
-		sin = (struct sockaddr_in *) &saremote;
-		result = connect(context.sock, (struct sockaddr *) sin,
-				sizeof (*sin));
-		if (result != 0 && errno != EINPROGRESS)
-			err(1, "connect() failed");
-	}
+        } else {
+                sin = (struct sockaddr_in *) &saremote;
+                result = connect(context.sock, (struct sockaddr *) sin,
+                                 sizeof(*sin));
+                if (result != 0 && errno != EINPROGRESS)
+                        err(1, "connect() failed");
+        }
 
-	/*
-	 * Create and dispatch the events.
-	 */
+        /*
+         * Create and dispatch the events.
+         */
 
-	if (lflag) {
-		event_set(&context.evreadwrite, context.sock,
-		    EV_READ, _libevent_accept, NULL);
-		event_add(&context.evreadwrite, NULL);
+        if (lflag) {
+                event_set(&context.evreadwrite, context.sock,
+                          EV_READ, _libevent_accept, NULL);
+                event_add(&context.evreadwrite, NULL);
 
-	} else {
-		event_set(&context.evreadwrite, context.sock, EV_WRITE,
-			_libevent_connect, &context);
-		event_add(&context.evreadwrite, NULL);
-		/*
-		 * Quit the program after 180 seconds.
-		 */
-		evtimer_set(&evquit, _libevent_quit, NULL);
-		memset(&tv, 0, sizeof (tv));
-		tv.tv_sec = 180;
-		evtimer_add(&evquit, &tv);
-	}
+        } else {
+                event_set(&context.evreadwrite, context.sock, EV_WRITE,
+                          _libevent_connect, &context);
+                event_add(&context.evreadwrite, NULL);
+                /*
+                 * Quit the program after 180 seconds.
+                 */
+                evtimer_set(&evquit, _libevent_quit, NULL);
+                memset(&tv, 0, sizeof(tv));
+                tv.tv_sec = 180;
+                evtimer_add(&evquit, &tv);
+        }
 
-	warnx("libevent method: %s", event_base_get_method(base));
+        warnx("libevent method: %s", event_base_get_method(base));
 
-	event_dispatch();
+        event_dispatch();
 
-	return (0);
+        return (0);
 }
