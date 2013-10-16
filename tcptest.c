@@ -65,8 +65,7 @@ static void _libevent_readwrite(int fd, short event, void *opaque)
         context = (struct TestContext *) opaque;
 
         if ((event & EV_READ) != 0) {
-                result =
-                    read(fd, context->buffer, sizeof(context->buffer));
+                result = read(fd, context->buffer, sizeof(context->buffer));
                 if (result == 0)
                         goto err;
                 if (result < 0)
@@ -81,8 +80,8 @@ static void _libevent_readwrite(int fd, short event, void *opaque)
 
         return;
 
-      err1:warn("I/O error");
-      err:close(fd);
+err1:   warn("I/O error");
+err:    close(fd);
         event_del(&context->evreadwrite);
         free(context);
 }
@@ -110,8 +109,8 @@ static void _libevent_accept(int fd, short event, void *opaque)
 
         return;
 
-      err1:close(sock);
-      err:warn("accept() failed");
+err1:   close(sock);
+err:    warn("accept() failed");
 }
 
 static void _libevent_connect(int fd, short event, void *opaque)
@@ -133,7 +132,7 @@ static void _libevent_connect(int fd, short event, void *opaque)
         if (res != 0) {
                 if (errno == ENOTCONN || errno == EINVAL)
                         (void) read(fd, context->buffer,
-                                    sizeof(context->buffer));
+                            sizeof(context->buffer));
                 warn("connect() failed");
                 close(fd);
                 return;
@@ -149,8 +148,8 @@ static void _libevent_quit(int fd, short event, void *opaque)
         exit(0);
 }
 
-#define USAGE								\
-    "usage: tcptest [-B write-size] [-p local-port] address port\n"	\
+#define USAGE \
+    "usage: tcptest [-B write-size] [-p local-port] address port\n" \
     "       tcptest -l [-p local-port]\n"
 
 int main(int argc, char *const *argv)
@@ -201,12 +200,8 @@ int main(int argc, char *const *argv)
         while ((opt = getopt(argc, argv, "B:lp:")) >= 0) {
                 switch (opt) {
                 case 'B':
-                        context.writesize = openbsd_strtonum(optarg,
-                                                             0,
-                                                             sizeof
-                                                             (context.
-                                                              buffer),
-                                                             &errstr);
+                        context.writesize = openbsd_strtonum(optarg, 0,
+                           sizeof (context.  buffer), &errstr);
                         if (errstr)
                                 errx(1, "writesize is %s", errstr);
                         break;
@@ -215,8 +210,7 @@ int main(int argc, char *const *argv)
                         break;
                 case 'p':
                         sin = (struct sockaddr_in *) &salocal;
-                        port =
-                            openbsd_strtonum(optarg, 1024, 65535, &errstr);
+                        port = openbsd_strtonum(optarg, 1024, 65535, &errstr);
                         if (errstr)
                                 errx(1, "port is %s", errstr);
                         sin->sin_port = htons((u_int16_t) port);
