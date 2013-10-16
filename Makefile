@@ -63,11 +63,23 @@ strtonum.o: strtonum.c strtonum.h
 tcptest.o: $(LIBEVENT) tcptest.c strtonum.h
 utptest.o: $(LIBEVENT) utptest.c strtonum.h
 
+#
+# On Linux systems with glibc < 2.17 you need to link with librt, otherwise
+# the link stage fails. According to my limited tests you don't need to
+# explicitly link with librt under Slackware -current (post 14.0) but you
+# need to do so with Ubuntu 12.04.
+#
+# To explicitly link with librt, run `make LIBRT=-lrt` instead of
+# just running `make'.
+#
+LIBRT =
+
 tcptest: strtonum.o tcptest.o $(LIBEVENT)
-	$(CC) -o tcptest strtonum.o tcptest.o $(LIBEVENT)
+	$(CC) -o tcptest strtonum.o tcptest.o $(LIBEVENT) $(LIBRT)
 
 utptest: strtonum.o utptest.o $(LIBEVENT) $(LIBUTP)
-	$(CC) -o utptest strtonum.o utptest.o $(LIBEVENT) $(LIBUTP)
+	$(CC) -o utptest strtonum.o utptest.o $(LIBEVENT) $(LIBUTP) $(LIBRT)
 
 utptest_emul: emul_utp.o strtonum.o utptest.o $(LIBEVENT)
-	$(CC) -o utptest_emul emul_utp.o strtonum.o utptest.o $(LIBEVENT)
+	$(CC) -o utptest_emul emul_utp.o strtonum.o utptest.o \
+	    $(LIBEVENT) $(LIBRT)
