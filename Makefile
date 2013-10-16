@@ -45,13 +45,13 @@ doc:
 	(cd doc && make)
 
 $(LIBEVENT):
-	(								\
-	 cd libevent &&							\
-	 autoreconf -i && automake &&					\
-         ./configure --disable-thread-support				\
-	             --disable-openssl					\
-	             --disable-libevent-install				\
-	             --enable-shared=no &&				\
+	( \
+	 cd libevent && \
+	 autoreconf -i && automake && \
+         ./configure --disable-thread-support \
+	             --disable-openssl \
+	             --disable-libevent-install \
+	             --enable-shared=no && \
 	 make \
 	)
 
