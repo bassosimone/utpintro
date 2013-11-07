@@ -211,7 +211,7 @@ In conclusion it should hopefully be clear now why the RTT
 measured with ping(8) follows a pattern that resembles
 the congestion window of TCP.
 
-### QoE discussion
+### 2.4. QoE discussion
 
 Now that we know the amount of bufferbloat (about one second) and
 we have a better understanding of the mechanism that causes it,
@@ -250,7 +250,7 @@ problematic. The ITU, in fact, recommends in G.114 that the total
 one-way delay shall be lower than 150 ms to have an acceptable
 interactive communication.
 
-### Innovation at the edges
+### 2.5. Innovation at the edges
 
 Now that we have discussed the effect of the bufferbloat on the
 QoE, we can spend a few paragraph to understand the design problems
@@ -352,7 +352,7 @@ delay, then we repeat the DIY experiment using a LEDBAT implementation
 to show that LEDBAT mitigates the bufferbloat, finally we briefly
 describe some LEDBAT- and bufferbloat-related research topics.
 
-### Delay-based Congestion Control
+### 3.1. Delay-based Congestion Control
 
 When there are no losses the LEDBAT algorithm seeks to control the
 queue length at the bottleneck (which is assumed to be the home
@@ -407,10 +407,11 @@ between the base delay itself and the current delay, the extra delay
 cannot be negative, therefore off_target cannot be greater than
 one. This means that the congestion window of LEDBAT cannot grow
 faster than 1 / cwnd (which is the rate at which the congestion
-window grows with TCP in congestion avoidance). Also, as the extra
-delay grows and comes closer to the TARGET_DELAY, the off_target
-value becomes smaller and gets closer to zero, i.e., LEDBAT inflates
-its congestion window less aggressively then TCP.
+window grows with TCP in congestion avoidance).
+
+Also, as the extra delay grows and comes closer to the TARGET_DELAY,
+the off_target value becomes smaller and gets closer to zero, i.e.,
+LEDBAT inflates its congestion window less aggressively then TCP.
 
 Instead, when the extra delay is greater than the target delay, the
 off_target variable is negative, and LEDBAT shrinks its cwnd. In
@@ -418,7 +419,7 @@ this case, however, there is no lower bound for the value of
 off_target, therefore the cwnd is deflated proportionally to the
 difference between the extra delay and the target.
 
-#### QoE Discussion
+#### 3.1.1. QoE Discussion
 
 LEDBAT is never more aggressive than TCP, therefore it should never
 cause more harm to the QoE than TCP.
@@ -437,7 +438,7 @@ However, the 100 ms is a compromise, and it does not fit any possible,
 scenario, e.g., 100 ms of extra delay is probably a problem when you
 are playing World of Warcraft.
 
-### LEDBAT on losses
+### 3.2. LEDBAT on losses
 
 In case of packet losses, LEDBAT behaves like TCP, i.e.:
 
@@ -485,7 +486,7 @@ is halved just after the third duplicate ack (or SACK notification).
 
 **Fig. 5** A possible LEDBAT finite state machine.
 
-### One-way delay measurements
+### 3.3. One-way delay measurements
 
 TODO
 
@@ -495,7 +496,7 @@ TODO
 **Fig. 6** The travel of timestamp and timestamp_difference samples
 from the two LEDBAT peers (assuming they use uTP).
 
-### DIY experiment with LEDBAT/uTP
+### 3.4. DIY experiment with LEDBAT/uTP
 
 TODO
 
