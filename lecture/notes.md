@@ -3,9 +3,9 @@
 *A lecture for the Streaming Multimediale course*
 
 - *Author:* Simone Basso &lt;bassosimone@gmail.com&gt;
-- *Date:* 2013-11-06
+- *Date:* 2013-11-07
 - *License:* [Creative Commons BY 3.0 Unported][cc-by]
-- *Version:* 0.0.2
+- *Version:* 0.0.3
 
 [cc-by]: http://creativecommons.org/licenses/by/3.0/
 ![CC BY 3.0 Unported logo][cc-by-logo]
@@ -389,7 +389,7 @@ for an acceptable interactive voice communication [G114][g114]).
 [g114]: http://en.wikipedia.org/wiki/G.114
 
 The following pseudocode shows a very-simplified form of the algorithm
-run by LEDBAT when it receives an in-sequence ACK::
+run by LEDBAT when it receives an in-sequence ACK:
 
     #define TARGET_DELAY 100.0
 
@@ -420,11 +420,65 @@ difference between the extra delay and the target.
 
 #### QoE Discussion
 
-TODO
+LEDBAT is never more aggressive than TCP, therefore it should never
+cause more harm to the QoE than TCP.
+
+Moreover, the extra delay added by a LEDBAT connection should be
+around 100 ms, while we observed more than one second of extra
+delay caused by a TCP flow.
+
+Therefore, video streaming, browsing, and DNS should work better
+when they compete with LEDBAT than when they compete with TCP.
+
+VoIP is more critical, still a QoE of around 100 ms should, at
+least in principle, make the VoIP possible.
+
+However, the 100 ms is a compromise, and it does not fit any possible,
+scenario, e.g., 100 ms of extra delay is probably a problem when you
+are playing World of Warcraft.
 
 ### LEDBAT on losses
 
-TODO
+In case of packet losses, LEDBAT behaves like TCP, i.e.:
+
+- it performs the Fast Retransmit and the Fast Recovery when it
+  receives the triple duplicate ACK, which basically means that LEDBAT
+  halves its cwnd in case of occasional losses;
+
+- when the Selective ACKs (SACKs) indicate that three packets were
+  lost, LEDBAT triggers the Fast Retransmit and Recovery as well;
+
+- also, LEDBAT uses the timeout as extrema ratio: if the ACK for a
+  sent packet does not arrive before a retransmit timeout time,
+  LEDBAT shrinks the congestion window to one packet.
+
+The SACKs are a mechanism that allow the receiver to provide to the
+sender a more clear picture of what was and of what was not lost
+in case of losses.
+
+By knowing which packets were lost and which packet arrived at the
+receiver, the sender has a more precise picture of the amount of
+packets in flight; also, the sender knows which packets should and
+which packets should not be retransmitted, therefore the sender
+can avoid more unneeded retransmissions.
+
+The formula to compute the retransmit timeout used by LEDBAT is the
+same one that TCP uses; the only major exception is that the timeout
+of LEDBAT cannot be smaller than 0.5 s:
+
+    delta = rtt - packet_rtt;
+    rtt_var += (abs(delta) - rtt_var) / 4;
+    rtt += (packet_rtt - rtt) / 8;
+    rto = max(rtt + rtt_var * 4, 500);
+
+The fact that the timeout is capped to 0.5 s means that LEDBAT is
+less aggressive in retransmitting in case of timeout.
+
+Fig. 5 shows a possible simplified finite state machine for LEDBAT in
+which the cwnd is expressed in packets. There is no slow start, because
+the slow start is aggressive, and LEDBAT has no aggressive goals. Also,
+the finite state machine shows a simplified recovery in which the cwnd
+is halved just after the third duplicate ack (or SACK notification).
 
 ![LEDBAT FSM][ledbat-fsm]
 [ledbat-fsm]: https://raw.github.com/bassosimone/utpintro/master/img/fsm.png
