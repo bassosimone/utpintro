@@ -407,10 +407,11 @@ between the base delay itself and the current delay, the extra delay
 cannot be negative, therefore off_target cannot be greater than
 one. This means that the congestion window of LEDBAT cannot grow
 faster than 1 / cwnd (which is the rate at which the congestion
-window grows with TCP in congestion avoidance). Also, as the extra
-delay grows and comes closer to the TARGET_DELAY, the off_target
-value becomes smaller and gets closer to zero, i.e., LEDBAT inflates
-its congestion window less aggressively then TCP.
+window grows with TCP in congestion avoidance).
+
+Also, as the extra delay grows and comes closer to the TARGET_DELAY,
+the off_target value becomes smaller and gets closer to zero, i.e.,
+LEDBAT inflates its congestion window less aggressively then TCP.
 
 Instead, when the extra delay is greater than the target delay, the
 off_target variable is negative, and LEDBAT shrinks its cwnd. In
