@@ -526,6 +526,12 @@ in Fig. 6, 10.0.0.1 later receives a packet that carries a current
 delay sample that is *69*, from which 10.0.0.1 infers that the current
 delay increased of two time units.
 
+![LEDBAT timestamps][ledbat-timestamps]
+[ledbat-timestamps]: https://raw.github.com/bassosimone/utpintro/master/img/timestamps.png
+
+**Fig. 6** The travel of timestamp and timestamp_difference samples
+from the two LEDBAT peers (assuming they use uTP).
+
 Note that the difference between two current delay samples eliminates
 the difference between the two clocks, in fact:
 
@@ -539,12 +545,6 @@ the difference between the two clocks, in fact:
 
     69 - 67 = flight_pkt3 + skew - flight_pkt1 - skew
             = flight_pkt3 - flight_pkt1
-
-![LEDBAT timestamps][ledbat-timestamps]
-[ledbat-timestamps]: https://raw.github.com/bassosimone/utpintro/master/img/timestamps.png
-
-**Fig. 6** The travel of timestamp and timestamp_difference samples
-from the two LEDBAT peers (assuming they use uTP).
 
 So, we have seen how LEDBAT measures the current delay and how it
 computes the timestamp difference, which is an estimate of the extra
