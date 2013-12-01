@@ -503,7 +503,9 @@ the 10.0.0.1 timestamp and the current time. Note that, in the common case, the
 is not the time that the packet was in flight. For this reason, in the following
 we indicate the 10.0.0.1 clock using *t* and the 10.0.0.2 clock using *t'*.
 Also, we indicate the (unknown) difference between the two clocks *t' - t* as
-*skew*.
+[skew][clock-skew].
+
+[clock-skew]: http://en.wikipedia.org/wiki/Clock_skew#On_a_network
 
 So, the diference between the time when the packet was received and the
 time when the packet was sent is the flight time plus *skew*. For example,
@@ -562,13 +564,15 @@ last two minutes;
 
 2. the timestamp difference is noisy, therefore, there are arguments
 in favor of filtering it, to reduce the noise (e.g., one can use
-an EWMA);
+an [EWMA][ewma]);
 
 3. the clock skew is typically not a constant function, but there
 is a drift by which the two clocks diverge.
 
 We don't dive into how LEDBAT addresses the problems 1-3 above in this
 notes; if you are curious, refer to RFC 6817.
+
+[ewma]: http://en.wikipedia.org/wiki/EWMA#Exponential_moving_average
 
 ### 3.4. DIY experiment with LEDBAT/uTP
 
