@@ -571,7 +571,7 @@ an EWMA);
 3. the clock skew is typically not a constant function, but there
 is a drift by which the two clocks diverge.
 
-We don't describe how LEDBAT addresses the problems 1-3 above in this
+We don't dive into how LEDBAT addresses the problems 1-3 above in this
 notes; if you are curious, refer to RFC 6817.
 
 ### 3.4. DIY experiment with LEDBAT/uTP
