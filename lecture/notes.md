@@ -5,7 +5,7 @@
 - *Author:* Simone Basso &lt;bassosimone@gmail.com&gt;
 - *Date:* 2013-11-07
 - *License:* [Creative Commons BY 3.0 Unported][cc-by]
-- *Version:* 0.0.3
+- *Version:* 0.0.4
 
 [cc-by]: http://creativecommons.org/licenses/by/3.0/
 ![CC BY 3.0 Unported logo][cc-by-logo]
@@ -488,13 +488,91 @@ is halved just after the third duplicate ack (or SACK notification).
 
 ### 3.3. One-way delay measurements
 
-TODO
+As we said, each ACK carries a measurement of the current one-way delay. Now,
+we see how LEDBAT manages to include a measurement of the current delay in
+each ACK.
+
+First, each packet that LEDBAT send includes a timestamp from the sender. For
+example, in Fig. 6, 10.0.0.1 sends a packet at time *t = 10* and includes
+such timestamp in the packet. In the following, we call this first packet that
+10.0.0.1 sends to 10.0.0.2 *pkt1*.
+
+Then, the packet arrives at 10.0.0.2, which computes the difference between
+the 10.0.0.1 timestamp and the current time. Note that, in the common case, the
+10.0.0.1's and the 10.0.0.2's clocks are no in sync, therefore, the difference
+is not the time that the packet was in flight. For this reason, in the following
+we indicate the 10.0.0.1 clock using *t* and the 10.0.0.2 clock using *t'*.
+Also, we indicate the (unknown) difference between the two clocks *t' - t* as
+*skew*.
+
+So, the diference between the time when the packet was received and the
+time when the packet was sent is the flight time plus *skew*. For example,
+in Fig. 6, the difference is 67, because 10.0.0.2 receives the packet at
+a time *t' = 77*.
+
+Later (not necessarily immediately) 10.0.0.2 sends a packet back to
+10.0.0.1 (which includes an ACK and possibly some data). This packet
+carries the sender time (*t' = 80* in Fig. 6) and also carries
+the latest difference (*67* in Fig. 6).
+
+When it gets the packet, 10.0.0.1 processes the difference sample sent
+by 10.0.0.2 (i.e., *67*). Such sample is the current value of the one-way
+delay in the *10.0.0.1 -> 10.0.0.2* direction, which we called the
+*current delay* throughout these notes.
+
+If the current delay is lower than the minimum delay, 10.0.0.1 updates
+the minimum delay. Also, it computes the current extra delay, as we
+have seen before, and it consequently updates its CWND. For example,
+in Fig. 6, 10.0.0.1 later receives a packet that carries a current
+delay sample that is *69*, from which 10.0.0.1 infers that the current
+delay increased of two time units.
+
+<center>
 
 ![LEDBAT timestamps][ledbat-timestamps]
 [ledbat-timestamps]: https://raw.github.com/bassosimone/utpintro/master/img/timestamps.png
 
 **Fig. 6** The travel of timestamp and timestamp_difference samples
 from the two LEDBAT peers (assuming they use uTP).
+
+</center>
+
+Note that the difference between two current delay samples eliminates
+the skew, in fact, if we call *pkt3* the second packet that 10.0.0.1
+sends to 10.0.0.2, the following holds:
+
+    69 = t'[pkt3_recv] - t[pkt3_send]
+       = t[pkt3_recv] + skew - t[pkt3_send]
+       = flight_pkt3 + skew
+
+    67 = t'[pkt1_recv] - t[pkt1_send]
+       = t[pkt1_recv] + skew - t[pkt1_send]
+       = flight_pkt1 + skew
+
+    69 - 67 = flight_pkt3 + skew - flight_pkt1 - skew
+            = flight_pkt3 - flight_pkt1
+
+So, we have seen how LEDBAT measures the current delay and how it
+computes the timestamp difference, which is an estimate of the extra
+delay. However, this explanation was a bit simplified and there are,
+in fact, some complications:
+
+1. in general (and especially for long-lived connections) the base
+delay is not constant, but varies over time. To make an example, the
+base delay may change dramatically if the route between the two
+hosts change (perhaps because there was a link failure). Therefore,
+LEDBAT computes the base delay over a reasonable time window, e.g., the
+last two minutes;
+
+2. the timestamp difference is noisy, therefore, there are arguments
+in favor of filtering it, to reduce the noise (e.g., one can use
+an EWMA);
+
+3. the clock skew is typically not a constant function, but there
+is a drift by which the two clocks diverge.
+
+We don't dive into how LEDBAT addresses the problems 1-3 above in this
+notes; if you are curious, refer to RFC 6817.
 
 ### 3.4. DIY experiment with LEDBAT/uTP
 
