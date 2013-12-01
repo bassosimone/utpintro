@@ -540,6 +540,12 @@ the difference between the two clocks, in fact:
     69 - 67 = flight_pkt3 + skew - flight_pkt1 - skew
             = flight_pkt3 - flight_pkt1
 
+![LEDBAT timestamps][ledbat-timestamps]
+[ledbat-timestamps]: https://raw.github.com/bassosimone/utpintro/master/img/timestamps.png
+
+**Fig. 6** The travel of timestamp and timestamp_difference samples
+from the two LEDBAT peers (assuming they use uTP).
+
 So, we have seen how LEDBAT measures the current delay and how it
 computes the timestamp difference, which is an estimate of the extra
 delay. However, this explanation was a bit simplified and there are,
@@ -561,12 +567,6 @@ is a drift by which the two clocks diverge.
 
 We don't describe how LEDBAT addresses the problems 1-3 above in this
 notes; if you are curious, refer to RFC 6817.
-
-![LEDBAT timestamps][ledbat-timestamps]
-[ledbat-timestamps]: https://raw.github.com/bassosimone/utpintro/master/img/timestamps.png
-
-**Fig. 6** The travel of timestamp and timestamp_difference samples
-from the two LEDBAT peers (assuming they use uTP).
 
 ### 3.4. DIY experiment with LEDBAT/uTP
 
