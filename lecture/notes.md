@@ -494,7 +494,8 @@ each ACK.
 
 First, each packet that LEDBAT send includes a timestamp from the sender. For
 example, in Fig. 6, 10.0.0.1 sends a packet at time *t = 10* and includes
-such timestamp in the packet.
+such timestamp in the packet. In the following, we call this first packet that
+10.0.0.1 sends to 10.0.0.2 *pkt1*.
 
 Then, the packet arrives at 10.0.0.2, which computes the difference between
 the 10.0.0.1 timestamp and the current time. Note that, in the common case, the
@@ -533,7 +534,8 @@ delay increased of two time units.
 from the two LEDBAT peers (assuming they use uTP).
 
 Note that the difference between two current delay samples eliminates
-the difference between the two clocks, in fact:
+the difference between the two clocks, in fact, if we call *pkt3*
+the second packet that 10.0.0.1 sends to 10.0.0.2, the following holds:
 
     69 = t'[pkt3_recv] - t[pkt3_send]
        = t[pkt3_recv] + skew - t[pkt3_send]
