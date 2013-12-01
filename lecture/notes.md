@@ -534,8 +534,8 @@ delay increased of two time units.
 from the two LEDBAT peers (assuming they use uTP).
 
 Note that the difference between two current delay samples eliminates
-the difference between the two clocks, in fact, if we call *pkt3*
-the second packet that 10.0.0.1 sends to 10.0.0.2, the following holds:
+the skew, in fact, if we call *pkt3* the second packet that 10.0.0.1
+sends to 10.0.0.2, the following holds:
 
     69 = t'[pkt3_recv] - t[pkt3_send]
        = t[pkt3_recv] + skew - t[pkt3_send]
