@@ -494,7 +494,7 @@ each ACK.
 
 First, each packet that LEDBAT send includes a timestamp from the sender. For
 example, in Fig. 6, 10.0.0.1 sends a packet at time *t = 10* and includes
-such timestamp into the packet.
+such timestamp in the packet.
 
 Then, the packet arrives at 10.0.0.2, which computes the difference between
 the 10.0.0.1 timestamp and the current time. Note that, in the common case, the
