@@ -5,7 +5,7 @@
 - *Author:* Simone Basso &lt;bassosimone@gmail.com&gt;
 - *Date:* 2013-11-07
 - *License:* [Creative Commons BY 3.0 Unported][cc-by]
-- *Version:* 0.0.3
+- *Version:* 0.0.4
 
 [cc-by]: http://creativecommons.org/licenses/by/3.0/
 ![CC BY 3.0 Unported logo][cc-by-logo]
