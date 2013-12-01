@@ -527,15 +527,11 @@ in Fig. 6, 10.0.0.1 later receives a packet that carries a current
 delay sample that is *69*, from which 10.0.0.1 infers that the current
 delay increased of two time units.
 
-<center>
-
 ![LEDBAT timestamps][ledbat-timestamps]
 [ledbat-timestamps]: https://raw.github.com/bassosimone/utpintro/master/img/timestamps.png
 
 **Fig. 6** The travel of timestamp and timestamp_difference samples
 from the two LEDBAT peers (assuming they use uTP).
-
-</center>
 
 Note that the difference between two current delay samples eliminates
 the skew, in fact, if we call *pkt3* the second packet that 10.0.0.1
